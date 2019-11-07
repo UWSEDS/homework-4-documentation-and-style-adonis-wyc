@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def read_function(url):
-    """ reads creates a dataframe from a URL that points to a CSV file"""
+    """ Creates a dataframe from a URL that points to a CSV file"""
     df = pd.read_csv(url)
     return df
 
