@@ -20,15 +20,23 @@ COLUMN_NAMES = DATA.columns.values.tolist()
 
 
 class TestModule(unittest.TestCase):
-    """implement test through unittest"""
+    """Implement test through unittest，including four functions"""
     # 　hw2 test
     def test_data_frame(self):
-        """Create a test that replicates what was done in item(2) for HW2."""
+        """
+        Create a test that replicates what was done in item(2) for HW2.
+        input argument: dataframe, column names
+        return: true or false
+        """
         self.assertTrue(hw2.test_create_dataframe(DATA, COLUMN_NAMES))
 
     # Check that all columns have values of the correct type.
     def test_type(self):
-        """Create a test that checks that all columns have values of the correct type."""
+        """
+        Create a test that checks that all columns have values of the correct type.
+        input argument: dataframe
+        return: throw valueError exception if dataframe doesn't meet condition
+        """
         for i in range(len(list(DATA.dtypes))):
             for j in range(list(DATA.count())[i]):
                 if type(DATA.iloc[j, i]) != type(DATA.iloc[0, i]):
@@ -36,13 +44,21 @@ class TestModule(unittest.TestCase):
 
     # Check for nan values.
     def test_nan(self):
-        """Creates a test that checks for nan values in data_frame"""
+        """
+        Creates a test that checks for nan values in data_frame
+        input argument: dataframe
+        return: true or false
+        """
         for i in list(DATA.columns):
             self.assertTrue(not pd.isnull(DATA[i]).any())
 
     # Verify that the data has at least one row.
     def test_row(self):
-        """Creates a test that checks that the data_frame has at least one row"""
+        """
+        Creates a test that checks that the data_frame has at least one row
+        input argument: dataframe
+        return: true or false
+        """
         for i in DATA.count():
             self.assertTrue(int(i) >= 1)
 
