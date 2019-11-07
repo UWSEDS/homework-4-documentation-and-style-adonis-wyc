@@ -45,7 +45,7 @@ class TestModule(unittest.TestCase):
     # Check for nan values.
     def test_nan(self):
         """
-        Creates a test that checks for nan values in data_frame
+        Create a test that checks for nan values in data_frame
         input argument: dataframe
         return: true or false
         """
